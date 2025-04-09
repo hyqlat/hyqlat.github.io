@@ -1,13 +1,13 @@
 # main links links
 main:
   - title: "Intro."
-    url: "/#about-me"
+    url: "/zh-cn/#about-me"
 
   - title: "Educa."
-    url: "/#-xl"
+    url: "/zh-cn/#-xl"
 
   - title: "Paper"
-    url: "/#-lwzl"
+    url: "/zh-cn/#-lwzl"
 
   # - title: "荣誉奖项"
   #   url: "/zh-cn/#-ryjx"
