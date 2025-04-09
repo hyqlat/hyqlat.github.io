@@ -37,7 +37,7 @@ Research area：
 
 ---
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2023</div><img src='images/sensors2022.svg' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2023</div><img src='images/XDSY.svg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 - **Jianwei Tang**, Jiangxin Sun, Xiaotong Lin, Lifang Zhang, Wei-Shi Zheng, Jian-Fang Hu. Temporal Continual Learning with Prior Compensation for Human Motion Prediction. *Advances in Neural Information Processing Systems*, 2023, 36: 65837-65849. (CCF-A)
@@ -48,7 +48,7 @@ Research area：
 
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">VI 2023</div><img src='images/sna2021.svg' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">VI 2023</div><img src='images/kvlstm.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 - **Jianwei Tang**, Jieming Wang, Jian-Fang Hu. Predicting human poses via recurrent attention network. *Visual Intelligence*. 2023, 1(1): 18.
@@ -58,11 +58,11 @@ Research area：
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2025</div><img src='images/ijaem2020.svg' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2025</div><img src='images/overview.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 - **Jianwei Tang**, Hong Yang, Tengyue Chen, Jian-Fang Hu. Stochastic Human Motion Prediction with Memory of Action Transition and Action Characteristic. *IEEE Conference
-on Computer Vision and Pattern Recognition*, 2025. (CCF-A)
+on Computer Vision and Pattern Recognition*, 2025, ***Accepted***. (CCF-A)
   [[Homepage]](https://hyqlat.github.io/STABACB.github.io/) [[PDF]]() [[Code]](https://github.com/hyqlat/ATACB)
 
 </div>
