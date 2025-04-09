@@ -30,8 +30,8 @@ Research area：
 
 # 🎓 Education
 
-- *2022.09 - 2025.06*, <a href="https://www.sysu.edu.cn/"><img class="svg" src="/images/SYSU_logo.svg" width="20pt"></a> Sun Yat-Sen University, MS
-- *2018.09 - 2022.06*, <a href="https://www.sysu.edu.cn/"><img class="svg" src="/images/SYSU_logo.svg" width="20pt"></a> Sun Yat-Sen University, BS
+- *2022.09 - 2025.06*, <a href="https://www.sysu.edu.cn/"><img class="svg" src="images/SYSU_logo.svg" width="20pt"></a> Sun Yat-Sen University, MS
+- *2018.09 - 2022.06*, <a href="https://www.sysu.edu.cn/"><img class="svg" src="images/SYSU_logo.svg" width="20pt"></a> Sun Yat-Sen University, BS
 
 <span class='anchor' id='-lwzl'></span>
 

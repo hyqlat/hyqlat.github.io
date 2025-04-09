@@ -8,7 +8,7 @@
 # Site Settings
 title                    : "AT"
 description              : "3D HMP"
-repository               : "AT/AT.github.io"
+repository               : "hyqlat/zh-cn"
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -27,7 +27,7 @@ author:
   location         : "Guangzhou"
   employer         : #"Hefei General Machinery Research Institute"
   pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=WMkMTb4AAAAJ"
+  googlescholar    : "https://scholar.google.com/citations?user=r533xwkAAAAJ"
   email            : "tangjw7@mail2.sysu.edu.cn"
   researchgate     : # "https://www.researchgate.net/profile/Jian-Tang-53"
   uri              : 
