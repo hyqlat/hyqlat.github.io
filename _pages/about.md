@@ -18,7 +18,7 @@ redirect_from:
 
 <!-- 我将博士毕业于湖北武汉的 华中科技大学 机械科学与工程学院，我的导师是康宜华教授。本科毕业于四川成都的 四川大学 制造科学与工程学院（现机械工程学院）。包括合著，我已经发表 20+ 篇学术论文 -->
 
-Ms student in SYSU. <a href='https://scholar.google.com/citations?user=r533xwkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=引用"></a>。 
+I am a master's student in the School of Computer Science at Sun Yat-sen University. I graduated from the Department of Computer Science and Technology at Sun Yat-sen University with a bachelor's degree. My main research area is 3D human motion prediction. At present, three of my papers have been published or accepted. <a href='https://scholar.google.com/citations?user=r533xwkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=引用"></a>。 
 
 Research area：
 
@@ -29,8 +29,8 @@ Research area：
 
 # 🎓 Education
 
-- *2022.09 - 2025.06*, <a href="https://www.sysu.edu.cn/"><img class="svg" src="images/SYSU_logo.svg" width="20pt"></a> Sun Yat-Sen University, MS
-- *2018.09 - 2022.06*, <a href="https://www.sysu.edu.cn/"><img class="svg" src="images/SYSU_logo.svg" width="20pt"></a> Sun Yat-Sen University, BS
+- *2022.09 - 2025.06*, <a href="https://www.sysu.edu.cn/"><img class="svg" src="images/SYSU_logo.svg" width="20pt"></a> Sun Yat-sen University, MS
+- *2018.09 - 2022.06*, <a href="https://www.sysu.edu.cn/"><img class="svg" src="images/SYSU_logo.svg" width="20pt"></a> Sun Yat-sen University, BS
 
 <span class='anchor' id='-lwzl'></span>
 
