@@ -6,8 +6,15 @@ main:
   - title: "Educa."
     url: "/zh-cn/#-xl"
 
-  - title: "Paper"
+  - title: "Publi."
     url: "/zh-cn/#-lwzl"
+
+  - title: "Intern."
+    url: "/zh-cn/#-intern"
+
+  - title: "Proj."
+    url: "/zh-cn/#-proj"
+
 
   # - title: "荣誉奖项"
   #   url: "/zh-cn/#-ryjx"

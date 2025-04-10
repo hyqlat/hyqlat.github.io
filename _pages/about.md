@@ -18,7 +18,7 @@ redirect_from:
 
 <!-- 我将博士毕业于湖北武汉的 华中科技大学 机械科学与工程学院，我的导师是康宜华教授。本科毕业于四川成都的 四川大学 制造科学与工程学院（现机械工程学院）。包括合著，我已经发表 20+ 篇学术论文 -->
 
-I am a master's student in the School of Computer Science at Sun Yat-sen University. I graduated from the Department of Computer Science and Technology at Sun Yat-sen University with a bachelor's degree. My main research area is 3D human motion prediction. At present, three of my papers have been published or accepted. <a href='https://scholar.google.com/citations?user=r533xwkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=引用"></a>。 
+I am a master's student in the School of Computer Science at Sun Yat-sen University. I graduated from the Department of Computer Science and Technology at Sun Yat-sen University with a bachelor's degree. My main research area is 3D human motion prediction. At present, three of my papers have been published or accepted. <a href='https://scholar.google.com/citations?user=r533xwkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=引用"></a>
 
 Research area：
 
@@ -27,14 +27,14 @@ Research area：
 
 <span class='anchor' id='-xl'></span>
 
-# 🎓 Education
+# 🎓 Educations
 
 - *2022.09 - 2025.06*, <a href="https://www.sysu.edu.cn/"><img class="svg" src="images/SYSU_logo.svg" width="20pt"></a> Sun Yat-sen University, MS
 - *2018.09 - 2022.06*, <a href="https://www.sysu.edu.cn/"><img class="svg" src="images/SYSU_logo.svg" width="20pt"></a> Sun Yat-sen University, BS
 
 <span class='anchor' id='-lwzl'></span>
 
-# 📝 Paper
+# 📝 Publications
 
 ---
 
@@ -69,7 +69,41 @@ on Computer Vision and Pattern Recognition*, 2025, ***Accepted***. (CCF-A)
 </div>
 </div>
 
+<span class='anchor' id='-intern'></span>
 
+# 💻 Internships
+
+- *2024.05 - 2024.08*, **Tencent**, Machine Learning Engineer
+- *2024.12 - 2025.01*, **Math Magic**, Machine Learning Engineer
+
+<span class='anchor' id='-proj'></span>
+
+# 🔖 Projects
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">3D Human Render</div><img src='images/pose1.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+- A tool for 3D human motion visualization. Supports the SMPL model and skeleton point representation. The visualization results include lighting, ground, shadows, and allow for customizing rendering colors, etc. [[Code]](https://github.com/hyqlat/PyRender-for-Human-Mesh/tree/Mesh_and_Skeleton)
+
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Scene Editor</div><img src='images/sceneeditor.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+- This project is a 3D scene editor developed using C++ and OpenGL, capable of loading skyboxes, heightmap terrains, and obj models. It originated from a group assignment in a computer graphics course at Sun Yat-sen University. [[Code]](https://github.com/bryanT4N/3DSE)
+
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Chinese Chess</div><img src='images/ChineseChess.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+- Chinese Chess Game, developed by C++. [[Code]](https://github.com/hyqlat/Chinese-Chess)
+
+</div>
+</div>
 
 <!-- <span class='anchor' id='-ryjx'>
 
