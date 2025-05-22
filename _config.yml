@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "AT"
-description              : "3D HMP"
+description              : "3D Human Motion"
 repository               : "hyqlat/hyqlat.github.io"
 google_scholar_stats_use_cdn : false #false
 
