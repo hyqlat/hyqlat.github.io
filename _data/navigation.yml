@@ -1,19 +1,19 @@
 # main links links
 main:
   - title: "Intro."
-    url: "/AT/#about-me"
+    url: "/#about-me"
 
   - title: "Educa."
-    url: "/AT/#-xl"
+    url: "/#-xl"
 
   - title: "Publi."
-    url: "/AT/#-lwzl"
+    url: "/#-lwzl"
 
   - title: "Intern."
-    url: "/AT/#-intern"
+    url: "/hyqlat/#-intern"
 
   - title: "Proj."
-    url: "/AT/#-proj"
+    url: "/hyqlat/#-proj"
 
 
   # - title: "荣誉奖项"
