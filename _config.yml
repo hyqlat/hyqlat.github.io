@@ -9,7 +9,7 @@
 title                    : "AT"
 description              : "3D Human Motion"
 repository               : "hyqlat/hyqlat.github.io"
-google_scholar_stats_use_cdn : false #false
+google_scholar_stats_use_cdn : true #false
 
 
 # google analytics
