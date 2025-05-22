@@ -1,9 +1,6 @@
 name: Get Citation Data
 
 on: 
- push:
-  branches:
-    - master  # 只在推送到master分支时触发
  page_build: 
  schedule:
   - cron:  '0 8 * * *'
