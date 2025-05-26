@@ -16,8 +16,6 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-<!-- 我将博士毕业于湖北武汉的 华中科技大学 机械科学与工程学院，我的导师是康宜华教授。本科毕业于四川成都的 四川大学 制造科学与工程学院（现机械工程学院）。包括合著，我已经发表 20+ 篇学术论文 -->
-
 I am a master's student in the School of Computer Science at Sun Yat-sen University. I graduated from the Department of Computer Science and Technology at Sun Yat-sen University with a bachelor's degree. My main research area is 3D human motion prediction. At present, three of my papers have been published or accepted. <a href='https://scholar.google.com/citations?user=r533xwkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=引用"></a>
 
 Research area：
@@ -41,7 +39,7 @@ Research area：
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2023</div><img src='images/XDSY.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-- **Jianwei Tang**, Jiangxin Sun, Xiaotong Lin, Lifang Zhang, Wei-Shi Zheng, Jian-Fang Hu. Temporal Continual Learning with Prior Compensation for Human Motion Prediction. *Advances in Neural Information Processing Systems*, 2023, 36: 65837-65849. (CCF-A)
+- **Jianwei Tang**, Jiangxin Sun, Xiaotong Lin, Lifang Zhang, Wei-Shi Zheng, Jian-Fang Hu. Temporal Continual Learning with Prior Compensation for Human Motion Prediction. *Advances in Neural Information Processing Systems*, 2023, 36: 65837-65849. (NeurIPS 2023)
   [[Page]](https://proceedings.neurips.cc/paper_files/paper/2023/hash/cf7a83a5342befd11d3d65beba1be5b0-Abstract-Conference.html) [[PDF]](https://proceedings.neurips.cc/paper_files/paper/2023/file/cf7a83a5342befd11d3d65beba1be5b0-Paper-Conference.pdf) [[Code]](https://github.com/hyqlat/TCL)
 
 </div>
@@ -63,7 +61,7 @@ Research area：
 <div class='paper-box-text' markdown="1">
 
 - **Jianwei Tang**, Hong Yang, Tengyue Chen, Jian-Fang Hu. Stochastic Human Motion Prediction with Memory of Action Transition and Action Characteristic. *IEEE Conference
-on Computer Vision and Pattern Recognition*, 2025, ***Accepted***. (CCF-A)
+on Computer Vision and Pattern Recognition*, 2025, ***Accepted***. (CVPR 2025)
   [[Homepage]](https://hyqlat.github.io/STABACB.github.io/) [[PDF]]() [[Code]](https://github.com/hyqlat/ATACB)
 
 </div>
