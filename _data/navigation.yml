@@ -12,6 +12,9 @@ main:
   - title: "Intern."
     url: "/#-intern"
 
+  - title: "Serv."
+    url: "/#-services"
+
   - title: "Proj."
     url: "/#-proj"
 

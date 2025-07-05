@@ -74,6 +74,14 @@ on Computer Vision and Pattern Recognition*, 2025, ***Accepted***. (CVPR 2025)
 - *2024.05 - 2024.08*, **Tencent**, Machine Learning Engineer
 - *2024.12 - 2025.01*, **Math Magic**, Machine Learning Engineer
 
+<span class='anchor' id='-services'></span>
+
+# 🤝 Services
+
+Conference Reviewer
+
+-  2025: NeurIPS
+
 <span class='anchor' id='-proj'></span>
 
 # 🔖 Projects
