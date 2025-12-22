@@ -37,6 +37,15 @@ Research area：
 
 ---
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2025</div><img src='images/overview.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+- **Jianwei Tang**, Hong Yang, Tengyue Chen, Jian-Fang Hu. Stochastic Human Motion Prediction with Memory of Action Transition and Action Characteristic. *IEEE Conference on Computer Vision and Pattern Recognition*, 2025, 1883-1893. (CVPR 2025)
+  [[Homepage]](https://hyqlat.github.io/STABACB.github.io/) [[PDF]](https://openaccess.thecvf.com/content/CVPR2025/papers/Tang_Stochastic_Human_Motion_Prediction_with_Memory_of_Action_Transition_and_CVPR_2025_paper.pdf) [[Code]](https://github.com/hyqlat/ATACB)
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2023</div><img src='images/XDSY.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -57,16 +66,6 @@ Research area：
 </div>
 </div>
 
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2025</div><img src='images/overview.jpg' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-- **Jianwei Tang**, Hong Yang, Tengyue Chen, Jian-Fang Hu. Stochastic Human Motion Prediction with Memory of Action Transition and Action Characteristic. *IEEE Conference
-on Computer Vision and Pattern Recognition*, 2025, 1883-1893. (CVPR 2025)
-  [[Homepage]](https://hyqlat.github.io/STABACB.github.io/) [[PDF]](https://openaccess.thecvf.com/content/CVPR2025/papers/Tang_Stochastic_Human_Motion_Prediction_with_Memory_of_Action_Transition_and_CVPR_2025_paper.pdf) [[Code]](https://github.com/hyqlat/ATACB)
-
-</div>
-</div>
 
 <span class='anchor' id='-intern'></span>
 
