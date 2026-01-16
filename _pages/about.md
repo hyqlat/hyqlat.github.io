@@ -37,6 +37,16 @@ Research area：
 
 ---
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TPAMI</div><img src='images/tpami2026.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+- **Tang, Jianwei** and Hu, Jian-Fang and Liang, Tianming and Lin, Xiaotong and Sun, Jiangxin and Zheng, Wei-Shi and Lai, Jianhuang. Human Motion Prediction via Continual Prior Compensation. *IEEE Transactions on Pattern Analysis and Machine Intelligence*, 2026. (TPAMI)
+  <!-- [[Homepage]](https://hyqlat.github.io/STABACB.github.io/) [[PDF]](https://openaccess.thecvf.com/content/CVPR2025/papers/Tang_Stochastic_Human_Motion_Prediction_with_Memory_of_Action_Transition_and_CVPR_2025_paper.pdf) [[Code]](https://github.com/hyqlat/ATACB) -->
+  [[DOI]](10.1109/TPAMI.2026.3651530)
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2025</div><img src='images/overview.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
