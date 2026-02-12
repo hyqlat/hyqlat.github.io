@@ -17,7 +17,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 <!-- I am a master's student in the School of Computer Science at Sun Yat-sen University. I graduated from the Department of Computer Science and Technology at Sun Yat-sen University with a bachelor's degree.  -->
-I completed both my Bachelor's and Master's studies at Sun Yat-sen University, where I was advised by Prof. <a href="https://isee-ai.cn/~hujianfang/">Jian-Fang Hu</a>. At present, three of my papers have been published. <a href='https://scholar.google.com/citations?user=r533xwkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=引用"></a>
+I completed both my Bachelor's and Master's studies at Sun Yat-sen University, where I was advised by Prof. <a href="https://isee-ai.cn/~hujianfang/">Jian-Fang Hu</a>. At present, four of my papers have been published. <a href='https://scholar.google.com/citations?user=r533xwkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=引用"></a>
 
 Research area：
 
