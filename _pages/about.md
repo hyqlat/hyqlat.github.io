@@ -40,7 +40,7 @@ Research area：
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">TPAMI</div><img src='images/tpami2026.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-- **Tang, Jianwei** and Hu, Jian-Fang and Liang, Tianming and Lin, Xiaotong and Sun, Jiangxin and Zheng, Wei-Shi and Lai, Jianhuang. Human Motion Prediction via Continual Prior Compensation. *IEEE Transactions on Pattern Analysis and Machine Intelligence*. 2026, 48(5): 5131-5146. (TPAMI)
+- **Tang, Jianwei** and Hu, Jian-Fang and Liang, Tianming and Lin, Xiaotong and Sun, Jiangxin and Zheng, Wei-Shi and Lai, Jianhuang. Human Motion Prediction via Continual Prior Compensation. *IEEE Transactions on Pattern Analysis and Machine Intelligence*. 2026, 48(5): 5131-5146. **(TPAMI)**
   [[Page]](https://ieeexplore.ieee.org/abstract/document/11342290)
    <!-- [[PDF]](https://ieeexplore.ieee.org/abstract/document/11342290) -->
    <!-- [[Code]](https://github.com/hyqlat/ATACB) -->
@@ -52,7 +52,7 @@ Research area：
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2025</div><img src='images/overview.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-- **Jianwei Tang**, Hong Yang, Tengyue Chen, Jian-Fang Hu. Stochastic Human Motion Prediction with Memory of Action Transition and Action Characteristic. *IEEE Conference on Computer Vision and Pattern Recognition*, 2025, 1883-1893. (CVPR 2025)
+- **Jianwei Tang**, Hong Yang, Tengyue Chen, Jian-Fang Hu. Stochastic Human Motion Prediction with Memory of Action Transition and Action Characteristic. *IEEE Conference on Computer Vision and Pattern Recognition*, 2025, 1883-1893. **(CVPR 2025)**
   [[Homepage]](https://hyqlat.github.io/STABACB.github.io/) [[PDF]](https://openaccess.thecvf.com/content/CVPR2025/papers/Tang_Stochastic_Human_Motion_Prediction_with_Memory_of_Action_Transition_and_CVPR_2025_paper.pdf) [[Code]](https://github.com/hyqlat/ATACB)
 
 </div>
@@ -61,7 +61,7 @@ Research area：
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2023</div><img src='images/XDSY.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-- **Jianwei Tang**, Jiangxin Sun, Xiaotong Lin, Lifang Zhang, Wei-Shi Zheng, Jian-Fang Hu. Temporal Continual Learning with Prior Compensation for Human Motion Prediction. *Advances in Neural Information Processing Systems*, 2023, 36: 65837-65849. (NeurIPS 2023)
+- **Jianwei Tang**, Jiangxin Sun, Xiaotong Lin, Lifang Zhang, Wei-Shi Zheng, Jian-Fang Hu. Temporal Continual Learning with Prior Compensation for Human Motion Prediction. *Advances in Neural Information Processing Systems*, 2023, 36: 65837-65849. **(NeurIPS 2023)**
   [[Page]](https://proceedings.neurips.cc/paper_files/paper/2023/hash/cf7a83a5342befd11d3d65beba1be5b0-Abstract-Conference.html) [[PDF]](https://proceedings.neurips.cc/paper_files/paper/2023/file/cf7a83a5342befd11d3d65beba1be5b0-Paper-Conference.pdf) [[Code]](https://github.com/hyqlat/TCL)
 
 </div>
@@ -90,9 +90,10 @@ Research area：
 
 # 🤝 Services
 
-Conference Reviewer
+Reviewer
 
 -  2025: NeurIPS
+-  2026：TMM, NeurIPS
 
 <span class='anchor' id='-proj'></span>
 
