@@ -40,6 +40,8 @@ Research area：
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">TPAMI</div><img src='images/tpami2026.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
+- <span class='show_paper_citations' data='r533xwkAAAAJ:9yKSN-GCB0IC'></span>
+
 - **Tang, Jianwei** and Hu, Jian-Fang and Liang, Tianming and Lin, Xiaotong and Sun, Jiangxin and Zheng, Wei-Shi and Lai, Jianhuang. Human Motion Prediction via Continual Prior Compensation. *IEEE Transactions on Pattern Analysis and Machine Intelligence*. 2026, 48(5): 5131-5146. **(TPAMI)**
   [[Page]](https://ieeexplore.ieee.org/abstract/document/11342290)
    <!-- [[PDF]](https://ieeexplore.ieee.org/abstract/document/11342290) -->
