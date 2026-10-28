@@ -40,7 +40,7 @@ Research area：
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">TPAMI</div><img src='images/tpami2026.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-Human Motion Prediction via Continual Prior Compensation 
+<strong>Human Motion Prediction via Continual Prior Compensation</strong>
 
 [[Page]](https://ieeexplore.ieee.org/abstract/document/11342290) <strong><span class='show_paper_citations' data='r533xwkAAAAJ:9yKSN-GCB0IC'></span></strong>
 
@@ -57,18 +57,26 @@ Human Motion Prediction via Continual Prior Compensation
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2025</div><img src='images/overview.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-- **Jianwei Tang**, Hong Yang, Tengyue Chen, Jian-Fang Hu. Stochastic Human Motion Prediction with Memory of Action Transition and Action Characteristic. *IEEE Conference on Computer Vision and Pattern Recognition*, 2025, 1883-1893. **(CVPR 2025)**
-  [[Homepage]](https://hyqlat.github.io/STABACB.github.io/) [[PDF]](https://openaccess.thecvf.com/content/CVPR2025/papers/Tang_Stochastic_Human_Motion_Prediction_with_Memory_of_Action_Transition_and_CVPR_2025_paper.pdf) [[Code]](https://github.com/hyqlat/ATACB)
+<strong>Stochastic Human Motion Prediction with Memory of Action Transition and Action Characteristic</strong>
 
+[[Homepage]](https://hyqlat.github.io/STABACB.github.io/) [[PDF]](https://openaccess.thecvf.com/content/CVPR2025/papers/Tang_Stochastic_Human_Motion_Prediction_with_Memory_of_Action_Transition_and_CVPR_2025_paper.pdf) [[Code]](https://github.com/hyqlat/ATACB) <strong><span class='show_paper_citations' data='r533xwkAAAAJ:d1gkVwhDpl0C'></span></strong>
+
+- **Jianwei Tang**, Hong Yang, Tengyue Chen, Jian-Fang Hu.  
+- *IEEE Conference on Computer Vision and Pattern Recognition*, 2025, 1883-1893. **(CVPR 2025)**
+  
 </div>
 </div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2023</div><img src='images/XDSY.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-- **Jianwei Tang**, Jiangxin Sun, Xiaotong Lin, Lifang Zhang, Wei-Shi Zheng, Jian-Fang Hu. Temporal Continual Learning with Prior Compensation for Human Motion Prediction. *Advances in Neural Information Processing Systems*, 2023, 36: 65837-65849. **(NeurIPS 2023)**
-  [[Page]](https://proceedings.neurips.cc/paper_files/paper/2023/hash/cf7a83a5342befd11d3d65beba1be5b0-Abstract-Conference.html) [[PDF]](https://proceedings.neurips.cc/paper_files/paper/2023/file/cf7a83a5342befd11d3d65beba1be5b0-Paper-Conference.pdf) [[Code]](https://github.com/hyqlat/TCL)
+<strong>Temporal Continual Learning with Prior Compensation for Human Motion Prediction</strong>
 
+[[Page]](https://proceedings.neurips.cc/paper_files/paper/2023/hash/cf7a83a5342befd11d3d65beba1be5b0-Abstract-Conference.html) [[PDF]](https://proceedings.neurips.cc/paper_files/paper/2023/file/cf7a83a5342befd11d3d65beba1be5b0-Paper-Conference.pdf) [[Code]](https://github.com/hyqlat/TCL) <strong><span class='show_paper_citations' data='r533xwkAAAAJ:u-x6o8ySG0sC'></span></strong>
+
+- **Jianwei Tang**, Jiangxin Sun, Xiaotong Lin, Lifang Zhang, Wei-Shi Zheng, Jian-Fang Hu.
+- *Advances in Neural Information Processing Systems*, 2023, 36: 65837-65849. **(NeurIPS 2023)**
+  
 </div>
 </div>
 
@@ -77,9 +85,13 @@ Human Motion Prediction via Continual Prior Compensation
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">VI 2023</div><img src='images/kvlstm.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-- **Jianwei Tang**, Jieming Wang, Jian-Fang Hu. Predicting human poses via recurrent attention network. *Visual Intelligence*. 2023, 1(1): 18.
-  [[Page]](https://link.springer.com/article/10.1007/s44267-023-00020-z) [[PDF]](https://link.springer.com/content/pdf/10.1007/s44267-023-00020-z.pdf) 
+<strong>Predicting human poses via recurrent attention network</strong>
 
+[[Page]](https://link.springer.com/article/10.1007/s44267-023-00020-z) [[PDF]](https://link.springer.com/content/pdf/10.1007/s44267-023-00020-z.pdf) <strong><span class='show_paper_citations' data='r533xwkAAAAJ:u5HHmVD_uO8C'></span></strong>
+
+- **Jianwei Tang**, Jieming Wang, Jian-Fang Hu.
+- *Visual Intelligence*. 2023, 1(1): 18.
+  
 </div>
 </div>
 
