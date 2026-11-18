@@ -166,7 +166,14 @@ def run(cmd: list, cwd: str, check: bool = True) -> subprocess.CompletedProcess:
 
 
 def push(author: dict) -> None:
-    """把 results/ 推送到 STATS_BRANCH 分支（不影响你的主分支）。"""
+    """
+    把 results/ 推送到 STATS_BRANCH 分支。
+
+    实现方式：使用 git worktree 在临时目录里检出 stats 分支后提交推送，
+    **完全不触碰你的当前工作区和当前分支**。
+    早期版本用 checkout 切换分支，在 orphan 分支场景下会把原分支文件变成
+    未跟踪文件，导致切回失败、用户被卡在 stats 分支上。worktree 没有这个问题。
+    """
     repo_dir = os.environ.get("REPO_DIR") or os.path.dirname(
         os.path.dirname(os.path.abspath(__file__))
     )
@@ -180,57 +187,74 @@ def push(author: dict) -> None:
     log(f"→ 推送目标仓库: {repo_dir}")
     log(f"→ 目标分支: {branch}，路径: {rel}/")
 
-    # 当前分支，稍后切回
-    orig = run(["git", "rev-parse", "--abbrev-ref", "HEAD"], repo_dir).stdout.strip()
-    log(f"→ 当前分支: {orig}")
+    # 记录当前分支仅用于日志（worktree 不会改变它）
+    orig = run(["git", "rev-parse", "--abbrev-ref", "HEAD"], repo_dir, check=False).stdout.strip()
+    log(f"→ 当前分支: {orig}（worktree 方式，不会被切换）")
 
-    # 工作区是否有未提交改动（避免影响用户正在进行的工作）
-    dirty = run(["git", "status", "--porcelain"], repo_dir).stdout.strip()
-    if dirty:
-        log("⚠️  工作区有未提交改动，为安全起见不自动切换分支。")
-        log("   请先提交或 stash，或手动执行推送。")
-        raise SystemExit(1)
+    # 先 fetch，确保远端分支信息是最新的
+    run(["git", "fetch", "origin", branch], repo_dir, check=False)
 
-    # 暂存 results 到临时目录
-    tmp = tempfile.mkdtemp(prefix="citation_")
-    for fn in os.listdir(RESULTS_DIR):
-        shutil.copy2(os.path.join(RESULTS_DIR, fn), tmp)
+    wt = tempfile.mkdtemp(prefix="citation_wt_")
+    # worktree 目录必须是空目录，mkdtemp 已建好目录，需删掉让 git 自己建
+    shutil.rmtree(wt, ignore_errors=True)
 
+    added_wt = False
     try:
-        # 切到分支（不存在则新建）
-        exists = run(
-            ["git", "rev-parse", "--verify", "--quiet", branch], repo_dir, check=False
+        # 判断远端或本地是否已有该分支
+        has_remote = (
+            run(["git", "rev-parse", "--verify", "--quiet", f"origin/{branch}"], repo_dir, check=False).returncode == 0
         )
-        if exists.returncode == 0:
-            run(["git", "checkout", branch], repo_dir)
-            # 拉取远端最新，避免 non-fast-forward
-            run(["git", "pull", "--rebase", "origin", branch], repo_dir, check=False)
+        has_local = (
+            run(["git", "rev-parse", "--verify", "--quiet", branch], repo_dir, check=False).returncode == 0
+        )
+
+        if has_remote:
+            # 基于远端分支建 detached worktree（最干净，避免本地分支与远端分叉）
+            r = run(["git", "worktree", "add", "--detach", wt, f"origin/{branch}"], repo_dir, check=False)
+        elif has_local:
+            r = run(["git", "worktree", "add", "--detach", wt, branch], repo_dir, check=False)
         else:
-            run(["git", "checkout", "--orphan", branch], repo_dir)
-            run(["git", "rm", "-rf", "--cached", "."], repo_dir, check=False)
+            # 全新 orphan worktree
+            r = run(["git", "worktree", "add", "--detach", wt], repo_dir, check=False)
 
-        # 写入文件
-        target = os.path.join(repo_dir, rel)
+        if r.returncode != 0:
+            log(f"❌ 创建 worktree 失败: {r.stderr.strip()}")
+            raise SystemExit(1)
+        added_wt = True
+
+        # 写入文件到 worktree
+        target = os.path.join(wt, rel)
         os.makedirs(target, exist_ok=True)
-        for fn in os.listdir(tmp):
-            shutil.copy2(os.path.join(tmp, fn), target)
+        for fn in os.listdir(RESULTS_DIR):
+            shutil.copy2(os.path.join(RESULTS_DIR, fn), target)
 
-        run(["git", "add", f"{rel}"], repo_dir)
-        staged = run(["git", "diff", "--cached", "--quiet"], repo_dir, check=False)
+        # results/ 可能被 .gitignore 忽略，必须 -f 强制加入
+        r = run(["git", "add", "-f", rel], wt, check=False)
+        if r.returncode != 0:
+            log(f"❌ git add 失败: {r.stderr.strip()}")
+            raise SystemExit(1)
+
+        staged = run(["git", "diff", "--cached", "--quiet"], wt, check=False)
         if staged.returncode == 0:
-            log("→ 没有变化，跳过提交")
+            log("→ 数据没有变化，跳过提交（远端分支已是最新）")
         else:
             msg = f"Updated Citation Data ({author.get('citedby', 0)} citations)"
-            run(["git", "commit", "-m", msg], repo_dir)
-            run(["git", "push", "--force", "origin", f"HEAD:{branch}"], repo_dir)
-            log(f"✅ 已推送到 {branch}")
+            r = run(["git", "commit", "-m", msg], wt, check=False)
+            if r.returncode != 0:
+                log(f"❌ git commit 失败: {r.stderr.strip()}")
+                raise SystemExit(1)
+            log(f"→ 已提交: {msg}")
 
-            # 回到原分支
-            if orig and orig != "HEAD" and orig != branch:
-                run(["git", "checkout", orig], repo_dir)
-                log(f"→ 已切回 {orig}")
+            r = run(["git", "push", "--force", "origin", f"HEAD:{branch}"], wt, check=False)
+            if r.returncode != 0:
+                log(f"❌ git push 失败:\n{r.stderr.strip()}")
+                log("   常见原因：无 push 权限 / 分支受保护 / 网络问题")
+                raise SystemExit(1)
+            log(f"✅ 已推送到 {branch}")
     finally:
-        shutil.rmtree(tmp, ignore_errors=True)
+        if added_wt:
+            run(["git", "worktree", "remove", "--force", wt], repo_dir, check=False)
+        shutil.rmtree(wt, ignore_errors=True)
 
 
 def main() -> None:
