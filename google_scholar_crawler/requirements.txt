@@ -1,12 +1,5 @@
-# jsonpickle==4.0.5
-# # scholarly==1.7.11
-# httpx==0.23.3
-# scholarly
-# requests[socks]
-
-
 jsonpickle==4.0.5
-httpx==0.23.3
+httpx<0.28
 scholarly==1.7.11
 bibtexparser<2
 requests[socks]
