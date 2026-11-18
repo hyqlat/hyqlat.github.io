@@ -3,7 +3,7 @@
 #   powershell -ExecutionPolicy Bypass -File .\google_scholar_crawler\run_local.ps1
 
 # ====== EDIT THESE THREE VALUES ======
-$GOOGLE_SCHOLAR_ID = "PUT_YOUR_SCHOLAR_ID_HERE"
+$GOOGLE_SCHOLAR_ID = "r533xwkAAAAJ"
 $PROXY_URL         = "127.0.0.1:7897"    # Clash Verge default mixed port
 $STATS_BRANCH      = "google-scholar-stats"
 # =====================================
