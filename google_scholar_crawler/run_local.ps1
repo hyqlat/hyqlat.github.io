@@ -3,7 +3,7 @@
 #   powershell -ExecutionPolicy Bypass -File .\google_scholar_crawler\run_local.ps1
 
 # ====== EDIT THESE THREE VALUES ======
-$GOOGLE_SCHOLAR_ID = "r533xwkAAAAJ"
+$GOOGLE_SCHOLAR_ID = "PUT_YOUR_SCHOLAR_ID_HERE"
 $PROXY_URL         = "127.0.0.1:7897"    # Clash Verge default mixed port
 $STATS_BRANCH      = "google-scholar-stats"
 # =====================================
@@ -89,7 +89,8 @@ Write-Host "Python     : $(& $py --version 2>&1)" -ForegroundColor Green
 # ---------- 5) Check dependencies ----------
 Write-Host ""
 Write-Host "Checking dependencies..." -ForegroundColor Cyan
-# 临时放宽错误处理：Python 把 traceback 写到 stderr 会被当成 terminating error
+# Temporarily relax error handling: Python tracebacks on stderr would otherwise
+# be treated as a terminating error under ErrorActionPreference = Stop
 $prevEAP = $ErrorActionPreference
 $ErrorActionPreference = "Continue"
 $probe = & $py -c "import scholarly, bibtexparser" 2>&1
@@ -128,9 +129,32 @@ if ($PROXY_URL -match "^(.+):(\d+)$") {
     Write-Host "[!] PROXY_URL should be host:port , port check skipped" -ForegroundColor Yellow
 }
 
+# ---------- 6.5) Check git can reach github through proxy ----------
+# git is a separate process and ignores Clash's system proxy, so direct
+# connections to github.com:443 often time out. We inject the proxy per
+# command with "git -c ..." (see _git_proxy_args in update_citations.py),
+# which never touches your global git config.
+if ($PROXY_URL) {
+    Write-Host ""
+    Write-Host "Checking git -> github.com through proxy..." -ForegroundColor Cyan
+    $prevEAP2 = $ErrorActionPreference
+    $ErrorActionPreference = "Continue"
+    $probeArgs = @("-c", "http.proxy=http://$PROXY_URL", "-c", "https.proxy=http://$PROXY_URL", "ls-remote", "https://github.com/hyqlat/hyqlat.github.io.git", "HEAD")
+    $null = & git @probeArgs 2>&1
+    $gitProbeCode = $LASTEXITCODE
+    $ErrorActionPreference = $prevEAP2
+    if ($gitProbeCode -ne 0) {
+        Write-Host "[!] git cannot reach github via $PROXY_URL (code $gitProbeCode)" -ForegroundColor Yellow
+        Write-Host "    Crawl will still run, but push may fail. Check Clash rule for github.com." -ForegroundColor Yellow
+    } else {
+        Write-Host "git reachable through proxy" -ForegroundColor Green
+    }
+}
+
 # ---------- 7) Run crawl ----------
 $env:GOOGLE_SCHOLAR_ID = $GOOGLE_SCHOLAR_ID
 $env:PROXY_URL         = $PROXY_URL
+$env:PROXY_SCHEME      = "http"
 $env:STATS_BRANCH      = $STATS_BRANCH
 $env:PYTHONIOENCODING  = "utf-8"
 $env:REPO_DIR          = $repoDir

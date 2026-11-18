@@ -165,6 +165,27 @@ def run(cmd: list, cwd: str, check: bool = True) -> subprocess.CompletedProcess:
     )
 
 
+def _git_proxy_args() -> list:
+    """
+    根据 PROXY_URL 生成 git 的临时代理参数。
+
+    为什么需要：git 是独立进程，默认不读 Clash 的系统代理/TUN，
+    直连 github.com:443 在国内常超时（Failed to connect after 21s）。
+    用 `git -c ...` 形式注入，只对本次命令生效，**不写入全局 git config**，
+    不会在你关闭 Clash 后留下"连不上"的残留配置。
+    """
+    proxy = os.environ.get("PROXY_URL", "").strip()
+    if not proxy:
+        return []
+    scheme = os.environ.get("PROXY_SCHEME", "http").strip() or "http"
+    url = f"{scheme}://{proxy}"
+    log(f"→ git 使用临时代理 {url}（仅本次生效，不改全局配置）")
+    return [
+        "-c", f"http.proxy={url}",
+        "-c", f"https.proxy={url}",
+    ]
+
+
 def push(author: dict) -> None:
     """
     把 results/ 推送到 STATS_BRANCH 分支。
@@ -183,6 +204,7 @@ def push(author: dict) -> None:
 
     branch = os.environ.get("STATS_BRANCH", "google-scholar-stats")
     rel = os.path.relpath(RESULTS_DIR, repo_dir).replace("\\", "/")
+    proxy_args = _git_proxy_args()
 
     log(f"→ 推送目标仓库: {repo_dir}")
     log(f"→ 目标分支: {branch}，路径: {rel}/")
@@ -192,7 +214,10 @@ def push(author: dict) -> None:
     log(f"→ 当前分支: {orig}（worktree 方式，不会被切换）")
 
     # 先 fetch，确保远端分支信息是最新的
-    run(["git", "fetch", "origin", branch], repo_dir, check=False)
+    r = run(["git"] + proxy_args + ["fetch", "origin", branch], repo_dir, check=False)
+    if r.returncode != 0:
+        err = (r.stderr or "").strip()
+        log(f"⚠️  git fetch 失败（分支可能尚未存在于远端，属正常）: {err.splitlines()[-1] if err else 'unknown'}")
 
     wt = tempfile.mkdtemp(prefix="citation_wt_")
     # worktree 目录必须是空目录，mkdtemp 已建好目录，需删掉让 git 自己建
@@ -214,8 +239,10 @@ def push(author: dict) -> None:
         elif has_local:
             r = run(["git", "worktree", "add", "--detach", wt, branch], repo_dir, check=False)
         else:
-            # 全新 orphan worktree
-            r = run(["git", "worktree", "add", "--detach", wt], repo_dir, check=False)
+            # 远端和本地都没有该分支：以当前 HEAD 为起点建 detached worktree，
+            # 之后用 push HEAD:branch 创建远端分支。
+            # 注意：不能省略起点，git worktree add 必须给一个 commit-ish。
+            r = run(["git", "worktree", "add", "--detach", wt, "HEAD"], repo_dir, check=False)
 
         if r.returncode != 0:
             log(f"❌ 创建 worktree 失败: {r.stderr.strip()}")
@@ -245,10 +272,25 @@ def push(author: dict) -> None:
                 raise SystemExit(1)
             log(f"→ 已提交: {msg}")
 
-            r = run(["git", "push", "--force", "origin", f"HEAD:{branch}"], wt, check=False)
+            r = run(
+                ["git"] + proxy_args + ["push", "--force", "origin", f"HEAD:{branch}"],
+                wt,
+                check=False,
+            )
             if r.returncode != 0:
-                log(f"❌ git push 失败:\n{r.stderr.strip()}")
-                log("   常见原因：无 push 权限 / 分支受保护 / 网络问题")
+                err = r.stderr.strip()
+                log(f"❌ git push 失败:\n{err}")
+                if "Timed out" in err or "Failed to connect" in err or "Could not resolve" in err:
+                    log("")
+                    log("   ↳ 这是网络问题，不是权限问题。git 连不上 github.com:443。")
+                    log("     排查顺序：")
+                    log("       1) Clash Verge 是否在运行、节点是否可用")
+                    log(f"       2) PROXY_URL 是否与 Clash 混合端口一致（当前: {os.environ.get('PROXY_URL', '未设置')}）")
+                    log("       3) 手动验证：")
+                    log(f"          curl.exe -I -x http://{os.environ.get('PROXY_URL','127.0.0.1:7897')} https://github.com --max-time 10")
+                    log("       4) 若 Clash 规则把 github.com 走了 DIRECT，改成走代理")
+                else:
+                    log("   常见原因：无 push 权限 / 分支受保护 / 需要先 fetch")
                 raise SystemExit(1)
             log(f"✅ 已推送到 {branch}")
     finally:
